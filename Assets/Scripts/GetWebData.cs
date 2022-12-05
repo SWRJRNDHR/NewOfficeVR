@@ -36,7 +36,7 @@ public class GetWebData : MonoBehaviour
 
     IEnumerator GetData()
     {
-        string url = "http://188.166.96.85/control.json"; 
+        string url = "http://188.166.96.85/newControl.json"; 
         using (var request = UnityWebRequest.Get(url))
         {
             yield return request.SendWebRequest();
@@ -45,8 +45,9 @@ public class GetWebData : MonoBehaviour
             else
             {
                 string json = request.downloadHandler.text;
-                //print(Time.deltaTime);
+                print(json);
                 commandData = JsonUtility.FromJson<CommandController>(json);
+                print(commandData);
             }
         }
 
@@ -55,11 +56,11 @@ public class GetWebData : MonoBehaviour
 
     public void CommandSelectEvent(int index)
     {
-        var stats = commandData.Commands[index].Stats;
+        var stats = commandData;
         VolumeSlider.value = stats.Volume;
 
         if(stats.TelephoneFlag == 1) {
-            telephoneAudio.SetActive(true);
+            //telephoneAudio.SetActive(true);
             //telephoneRing.Play();
         }
         

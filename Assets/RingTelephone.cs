@@ -12,13 +12,13 @@ public class RingTelephone : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var stats = commandData.Commands[0].Stats;
+       /* var stats = commandData.Commands[0].Stats;
         if (stats != null) {
             if (stats.TelephoneFlag == 1)
             {
                 telephoneRing.Play();
             }
-        }
+        }*/
        
     }
 }

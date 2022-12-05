@@ -6,9 +6,13 @@ using System;
 [Serializable]
 public class CommandController
 {
-    public List<Commands> Commands;
+    public int Volume;
+    public int TelephoneFlag;
+    public int SwatterFlag;
+    //public List<Stats> Stats;
+    //public string Commands;
 }
-
+/*
 [Serializable]
 public class Stats
 {
@@ -16,10 +20,9 @@ public class Stats
     public int TelephoneFlag;
     public int SwatterFlag;
 }
-
 [Serializable]
 public class Commands
 {
     public string Name;
     public Stats Stats;
-}
+}*/
