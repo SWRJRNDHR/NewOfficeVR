@@ -9,8 +9,11 @@ public class GetWebData : MonoBehaviour
     
     public Slider VolumeSlider;
     public GameObject telephoneAudio;
-    //public AudioSource telephoneRing;
+    //public GameObject telephone;
+    public GameObject CharacterScript;
     CommandController commandData = null;
+
+    public GameObject flies;
 
     float time;
     float Delay;
@@ -59,11 +62,37 @@ public class GetWebData : MonoBehaviour
         var stats = commandData;
         VolumeSlider.value = stats.Volume;
 
-        if(stats.TelephoneFlag == 1) {
-            //telephoneAudio.SetActive(true);
-            //telephoneRing.Play();
+        if (stats.CharacterScript == 1)
+        {
+            CharacterScript.SetActive(true);
         }
-        
+        else {
+            CharacterScript.SetActive(false);
+        }
+
+        if (stats.TelephoneFlag == 1)
+        {
+            telephoneAudio.SetActive(true);
+            
+            
+        }
+        else {
+            telephoneAudio.SetActive(false);
+            
+        }
+
+        if (stats.SwatterFlag == 1)
+        {
+            flies.SetActive(true);
+
+
+        }
+        else
+        {
+            flies.SetActive(false);
+
+        }
+
 
     }
 }

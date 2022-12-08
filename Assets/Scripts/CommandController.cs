@@ -9,20 +9,6 @@ public class CommandController
     public int Volume;
     public int TelephoneFlag;
     public int SwatterFlag;
-    //public List<Stats> Stats;
-    //public string Commands;
+    public int CharacterScript;
 }
-/*
-[Serializable]
-public class Stats
-{
-    public int Volume;
-    public int TelephoneFlag;
-    public int SwatterFlag;
-}
-[Serializable]
-public class Commands
-{
-    public string Name;
-    public Stats Stats;
-}*/
+

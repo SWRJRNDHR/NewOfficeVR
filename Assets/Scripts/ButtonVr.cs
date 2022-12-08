@@ -43,10 +43,10 @@ public class ButtonVr : MonoBehaviour
         }
     }
 
-    public void SpawnShpare()
+    public void CreateCopy()
     {
         GameObject copy = GameObject.Instantiate(paper);
-        copy.transform.localPosition = new Vector3(11.756f, 0.889f, 1.999f);
+        copy.transform.localPosition = new Vector3(11.756f, 0.889f, 1.87f);
         copy.AddComponent<Rigidbody>();
         
     }
