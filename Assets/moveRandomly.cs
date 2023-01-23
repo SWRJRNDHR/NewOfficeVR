@@ -20,12 +20,13 @@ public class moveRandomly : MonoBehaviour
     void Start()
     {
         nav = gameObject.GetComponent<NavMeshAgent>();
-
-        
-        /*nav = this.GetComponent<NavMeshAgent>();
+                
+        /*
+        nav = this.GetComponent<NavMeshAgent>();
         RandomPoint = GameObject.FindGameObjectsWithTag("RandomPoint");
         Debug.Log("Random Point = " +RandomPoint.Length.ToString());
         */
+    
     }
 
     // Update is called once per frame
