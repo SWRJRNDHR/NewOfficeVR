@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
+using Facebook.WitAi.TTS.Samples;
 
 public class GetWebData : MonoBehaviour
 {
@@ -12,8 +13,12 @@ public class GetWebData : MonoBehaviour
     //public GameObject telephone;
     public GameObject CharacterScript;
     CommandController commandData = null;
-
+    //public CustomTTS _TTS;
+    //public GameObject demo;
     public GameObject flies;
+    public InputField inputTextForCharacter;
+    private string oldMessage;
+    private string newMessage;
 
     float time;
     float Delay;
@@ -22,6 +27,7 @@ public class GetWebData : MonoBehaviour
     {
         time = 0f;
         Delay = 10f;
+        //linkToScriptB = GameObject.Find("Standing Idle (1)").GetComponent(TT SfromWebsite);
     }
 
     void Update()
@@ -33,8 +39,12 @@ public class GetWebData : MonoBehaviour
             time = 0f;
             StartCoroutine(GetData());
         }
+        /*if (demo.activeSelf)
+        {
+            _TTS.SayPhrase();
+        }
+        */
 
-        
     }
 
     IEnumerator GetData()
@@ -62,14 +72,16 @@ public class GetWebData : MonoBehaviour
         var stats = commandData;
         VolumeSlider.value = stats.Volume;
 
+        /*
         if (stats.CharacterScript == 1)
         {
             CharacterScript.SetActive(true);
         }
         else {
             CharacterScript.SetActive(false);
-        }
+        }*/
 
+        //TELEPHONE TASK
         if (stats.TelephoneFlag == 1)
         {
             telephoneAudio.SetActive(true);
@@ -80,7 +92,7 @@ public class GetWebData : MonoBehaviour
             telephoneAudio.SetActive(false);
             
         }
-
+        //SWATTER TASK
         if (stats.SwatterFlag == 1)
         {
             flies.SetActive(true);
@@ -92,6 +104,17 @@ public class GetWebData : MonoBehaviour
             flies.SetActive(false);
 
         }
+        /*Character Script
+        newMessage = stats.Message;
+        if(newMessage == oldMessage)
+        {
+            inputTextForCharacter = null;
+        }
+        else
+        {
+            oldMessage = newMessage;
+            inputTextForCharacter.Text = newMessage;
+        }*/
 
 
     }
