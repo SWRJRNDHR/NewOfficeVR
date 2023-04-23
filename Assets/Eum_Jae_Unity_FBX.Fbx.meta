@@ -2,7 +2,37 @@ fileFormatVersion: 2
 guid: 51c1c950cfdca54408058b5abcaa3e3c
 ModelImporter:
   serializedVersion: 21300
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: 7244737653950085548
+    second: Armature|Armature|0_T-Pose|0_T-Pose
+  - first:
+      74: -7260970607174843825
+    second: Armature|Armature|Calibration|Calibration
+  - first:
+      74: 1553744909207309753
+    second: Armature|BothFists
+  - first:
+      74: 5204960361110579418
+    second: Armature|Key.001|0_T-Pose|0_T-Pose
+  - first:
+      74: 2347031412473279560
+    second: Armature|Key.001|Calibration|Calibration
+  - first:
+      74: 2781961052722069679
+    second: Armature|Key.002|0_T-Pose|0_T-Pose
+  - first:
+      74: 8243880890285137169
+    second: Armature|Key.002|Calibration|Calibration
+  - first:
+      74: -5286706118440801234
+    second: Armature|Key|0_T-Pose|0_T-Pose
+  - first:
+      74: -6928585675203655464
+    second: Armature|Key|Calibration|Calibration
+  - first:
+      74: 7567775469319425533
+    second: Armature|RFist
   externalObjects:
   - first:
       type: UnityEngine:Material
