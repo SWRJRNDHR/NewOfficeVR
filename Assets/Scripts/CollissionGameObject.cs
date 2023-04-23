@@ -8,22 +8,20 @@ public class CollissionGameObject : MonoBehaviour
 
     //creates that script data type
 
-    public ScaleUp scaleUp;
+    public GameObject telephoneRing;
+    public bool alreadyPickedUp;
 
     public void Start()
     {
-        scaleUp.enabled = false;
+        alreadyPickedUp = false;
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider other)
     {
-        //Check for a match with the specified name on any GameObject that collides with your GameObject
-        if (collision.gameObject.name == "Book_02 (1)")
+        if (other.gameObject.tag == "Right Hand" || other.gameObject.tag == "Left Hand")
         {
-            //If the GameObject's name matches the one you suggest, output this message in the console
-            Debug.Log("Colliding");
-            scaleUp.enabled = true;
-        }
-
+            telephoneRing.SetActive(false);
+            alreadyPickedUp = true;
+        }        
     }
 }

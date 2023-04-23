@@ -17,14 +17,21 @@ public class GetWebData : MonoBehaviour
     //public GameObject demo;
     public GameObject flies;
     public InputField inputTextForCharacter;
-    private string oldMessage;
-    private string newMessage;
+    private bool TTSComplete;
+    public GameObject teleHeadset;
+    CollissionGameObject telephonecollider;
+
+    //CustomeTTS
+
+    public GameObject scriptCanvas;
 
     float time;
     float Delay;
 
     private void Start()
     {
+        TTSComplete = false;
+        telephonecollider = teleHeadset.GetComponent<CollissionGameObject>();
         time = 0f;
         Delay = 10f;
         //linkToScriptB = GameObject.Find("Standing Idle (1)").GetComponent(TT SfromWebsite);
@@ -82,17 +89,22 @@ public class GetWebData : MonoBehaviour
         //TELEPHONE TASK
         if (stats.TelephoneFlag == 1)
         {
-            telephoneAudio.SetActive(true);
-                       
+            Debug.Log("flag set to 1");
+            Debug.Log(telephonecollider.alreadyPickedUp);
+            if (telephonecollider.alreadyPickedUp == false)
+            {
+                Debug.Log("picked up is false");
+                telephoneAudio.SetActive(true);
+                scriptCanvas.SetActive(true);
+            }
         }
         else if(stats.TelephoneFlag == 2) {
             CharacterScript.SetActive(true);
-
-
         }
         else
         {
             telephoneAudio.SetActive(false);
+            scriptCanvas.SetActive(false);
         }
         //SWATTER TASK
         if (stats.SwatterFlag == 1)
@@ -104,23 +116,28 @@ public class GetWebData : MonoBehaviour
         {
             flies.SetActive(false);
         }
-        /*
-        if (stats.Message != null)
+        
+        if (stats.TelephoneFlag == 1)
         {
             //Character Script
-            newMessage = stats.Message;
+            
             Debug.Log(stats.Message);
-            inputTextForCharacter.text = newMessage;
-            if (newMessage == oldMessage)
+            inputTextForCharacter.text = "Hey this is Rebecca here. I am interested in selling my home. I would like to make an appointment with one of your real estate agent to do that. What appointment is available?";
+            TTSComplete = true;
+            
+            
+            /*if (newMessage == oldMessage)
             {
                 inputTextForCharacter.text = null;
             }
+            
             else
             {
                 Debug.Log(newMessage);
                 oldMessage = newMessage;
                 inputTextForCharacter.text = newMessage;
             }
+
         }
         else
         {
@@ -136,7 +153,7 @@ public class GetWebData : MonoBehaviour
                 Debug.Log(newMessage);
                 oldMessage = newMessage;
                 inputTextForCharacter.text = newMessage;
-            }
-        }*/
+            }*/
+        }
     }
 }

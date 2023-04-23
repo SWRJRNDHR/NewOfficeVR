@@ -13,6 +13,7 @@ namespace Facebook.WitAi.TTS.Samples
         //[SerializeField] private TMP_InputField _input;
         [SerializeField] private Text _title;
         [SerializeField] private InputField _input;
+        //[SerializeField] private Text _input1;
         [SerializeField] private TTSSpeaker _speaker;
         //public string textToSpeak;
         public GameObject trigger;
