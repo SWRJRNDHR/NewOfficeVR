@@ -9,6 +9,6 @@ public class CommandController
     public int Volume;
     public int TelephoneFlag;
     public int SwatterFlag;
-    public string Message;
+    public int Message;
 }
 

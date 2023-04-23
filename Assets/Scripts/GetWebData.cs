@@ -39,11 +39,6 @@ public class GetWebData : MonoBehaviour
             time = 0f;
             StartCoroutine(GetData());
         }
-        /*if (demo.activeSelf)
-        {
-            _TTS.SayPhrase();
-        }
-        */
 
     }
 
@@ -72,50 +67,76 @@ public class GetWebData : MonoBehaviour
         var stats = commandData;
         VolumeSlider.value = stats.Volume;
 
-        /*
-        if (stats.CharacterScript == 1)
+        
+        if (stats.Message == 1)
         {
             CharacterScript.SetActive(true);
+            Debug.Log("Executing message bolck");
         }
-        else {
+        else 
+        {
             CharacterScript.SetActive(false);
-        }*/
+            Debug.Log("Not Executing message bolck");
+        }
 
         //TELEPHONE TASK
         if (stats.TelephoneFlag == 1)
         {
             telephoneAudio.SetActive(true);
-            
-            
+                       
         }
-        else {
+        else if(stats.TelephoneFlag == 2) {
+            CharacterScript.SetActive(true);
+
+
+        }
+        else
+        {
             telephoneAudio.SetActive(false);
-            
         }
         //SWATTER TASK
         if (stats.SwatterFlag == 1)
         {
             flies.SetActive(true);
 
-
         }
         else
         {
             flies.SetActive(false);
-
         }
-        /*Character Script
-        newMessage = stats.Message;
-        if(newMessage == oldMessage)
+        /*
+        if (stats.Message != null)
         {
-            inputTextForCharacter = null;
+            //Character Script
+            newMessage = stats.Message;
+            Debug.Log(stats.Message);
+            inputTextForCharacter.text = newMessage;
+            if (newMessage == oldMessage)
+            {
+                inputTextForCharacter.text = null;
+            }
+            else
+            {
+                Debug.Log(newMessage);
+                oldMessage = newMessage;
+                inputTextForCharacter.text = newMessage;
+            }
         }
         else
         {
-            oldMessage = newMessage;
-            inputTextForCharacter.Text = newMessage;
+            newMessage = "Code above is fucked up";
+            Debug.Log(newMessage);
+            inputTextForCharacter.text = newMessage;
+            if (newMessage == oldMessage)
+            {
+                inputTextForCharacter.text = null;
+            }
+            else
+            {
+                Debug.Log(newMessage);
+                oldMessage = newMessage;
+                inputTextForCharacter.text = newMessage;
+            }
         }*/
-
-
     }
 }

@@ -51,7 +51,7 @@ public class ScaleUp : MonoBehaviour
         //paper.transform.position += temp;
 
         //float scale = defaultHeight / headHeight;
-        paper.transform.localScale = new Vector3(4f, 4f, 4f); //Vector3.one * scale;
+        paper.transform.localScale = new Vector3(14f, 1f, 5f); //Vector3.one * scale;
         paper.transform.Rotate(90f, 180f, 0.0f);
         paper.transform.position = new Vector3(12.5f, 1.1f, -2.5f); ;
     }
